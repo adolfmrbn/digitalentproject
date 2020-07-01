@@ -1,0 +1,101 @@
+# Number 1: Check if point is inside/outside the circle
+def isPointInCircle(x, y, r, center=(0,0)):
+
+  # Function of cirle
+  circlefunc = (x-center[0])**2 + (y-center[1])**2
+
+  # Check if the point is inside/outside circle
+  if circlefunc > r**2:
+    return False # outside circle
+  else:
+    return True # inside circle
+# Output Check
+print(isPointInCircle(1,1,1,center=(0,0)),isPointInCircle(1,0,1,center=(0,0)),
+      isPointInCircle(1,1,1,center=(1,0)),isPointInCircle(0,0,1,center=(1,1)))
+      
+# Number 2: Generate random points inside the circle
+import random
+
+def generateRandomSquarePoints(n, length, center=(0,0)):
+  
+  minx = center[0]-length/2
+  miny = center[1]-length/2
+  
+  # Gunakan list comprehension dengan variable minx, miny, length, dan n
+  points = [[random.uniform(minx, minx+length), random.uniform(miny, miny+length)] for i in range(n)]
+  
+  return points
+# Output check
+random.seed(3)
+
+# generate 100 point di dalam persegi dengan panjang sisi 1 dan berpusat di (0,0)
+points = generateRandomSquarePoints(5, 2, center=(100,100))
+print(points)
+
+# Visualization check
+import matplotlib.pyplot as plt
+x,y = zip(*points)
+
+# persegi dengan panjang sisi 1 dan berpusat di (0,0)
+r1 = plt.Rectangle((-0.5,-0.5),1,1,color='r', fill=False)
+c1 = plt.Circle((0,0), 0.5, color='b', fill=False)
+fig, ax = plt.subplots(figsize=(9,9)) 
+ax.add_artist(r1)
+ax.add_artist(c1)
+plt.xlim(-0.6,0.6)
+plt.ylim(-0.6,0.6)
+plt.scatter(x,y,s=100,marker='x')
+plt.show()
+
+# Number 3: Estimating circle area
+def MCCircleArea(r, n=100, center=(0,0)):
+  
+  # result : will be list of circle points (x, y)
+  result = generateRandomSquarePoints(n, 2*r, center=(0,0))
+
+  # newList : list of points which are inside circle
+  newList = []
+  for pnt in range(len(result)): 
+    if isPointInCircle(result[pnt][0], result[pnt][1], r, center=(0,0)) == True:
+      newList.append([result[pnt][0], result[pnt][1]])
+
+  # counting amount of points inside circle
+  n_dalam = len(newList)
+  areaCircle_est = (n_dalam / n) * (2*r)**2 # estimation of circle area
+
+  return areaCircle_est
+# Output check
+random.seed(0)
+print(MCCircleArea(1, 100), MCCircleArea(1, 10, center=(10, 10)))
+
+# Number 4: Estimating pi value
+def LLNPiMC(nsim, nsample):
+
+  # calculating mean of estimated circle area
+  sum = 0
+  for i in range(nsim): # looping nsim times
+    area_circle = MCCircleArea(1, nsample, center=(0,0)) # estimation of circle area with nsample random points
+    sum += area_circle
+
+  mu = sum / nsim
+
+  return mu
+# Output check
+import math
+
+random.seed(0)
+estpi = LLNPiMC(10000, 500)
+
+print('est_pi:',estpi)
+print('act_pi:',math.pi)
+
+# Number 5: Calculating relative error
+def relativeError(act, est):
+
+  err = abs((est - act) / act) * 100 # error relative
+
+  return err
+# Output check
+print('error relatif:',relativeError(math.pi, estpi),'%')
+
+ 
