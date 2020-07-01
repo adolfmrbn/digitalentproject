@@ -1,3 +1,2 @@
-# digitalentproject1
-Project-1 Digital Talent Scholarship, Python Programming
-
+# Digital Talent Scholarship 2020, Python Programming by Cisco
+Projects of Python
