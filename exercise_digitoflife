@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 26 15:05:46 2020
+
+@author: Lenovo
+"""
+
+'''Step1'''
+birthday = input("Input your birthday (YYYYMMDD/YYYYDDMM/MMDDYYYY): ")
+
+'''Step2'''
+sum1 = 0
+for i in birthday:
+    sum1 += int(i)
+
+'''Step3: Digit check'''
+if len(str(sum1)) == 1:
+    print("Your digit of life is ", sum1)
+else:
+    sum2 = 0
+    for j in str(sum1):
+        sum2 += int(j)
+    print("Your digit of life is ", sum2)
