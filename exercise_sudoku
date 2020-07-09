@@ -1,0 +1,219 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 27 13:47:35 2020
+
+@author: Lenovo
+"""
+
+''' Step1: Make function to check if the 3x3 subsection
+has the ascending value from 1 to 9, and no duplicates '''
+def CheckNumbers(lst):
+    
+    ### the first 3x3 subsection is made into a new sublist
+    subs1 = []
+    for i in range(3): # column
+        for j in range(3): # row
+            subs1.append(lst[i][j]) 
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean     
+    isTrue1 = (subs1.count('1') == 1) and (subs1.count('2') == 1) and \
+        (subs1.count('3') == 1) and (subs1.count('4') == 1) and \
+        (subs1.count('5') == 1) and (subs1.count('6') == 1) and \
+        (subs1.count('7') == 1) and (subs1.count('8') == 1) and \
+        (subs1.count('9') == 1)
+                
+    ### the second 3x3 subsection is made into a new sublist
+    subs2 = []
+    for i in range(3, 6, 1): # column
+        for j in range(3): # row
+           subs2.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean
+    isTrue2 = (subs2.count('1') == 1) and (subs2.count('2') == 1) and \
+        (subs2.count('3') == 1) and (subs2.count('4') == 1) and \
+        (subs2.count('5') == 1) and (subs2.count('6') == 1) and \
+        (subs2.count('7') == 1) and (subs2.count('8') == 1) and \
+        (subs2.count('9') == 1)
+              
+    ### the third 3x3 subsection is made into a new sublist
+    subs3 = []
+    for i in range(6, 9, 1): # column
+        for j in range(3): # row
+            subs3.append(lst[i][j])        
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean
+    isTrue3 = (subs3.count('1') == 1) and (subs3.count('2') == 1) and \
+        (subs3.count('3') == 1) and (subs3.count('4') == 1) and \
+        (subs3.count('5') == 1) and (subs3.count('6') == 1) and \
+        (subs3.count('7') == 1) and (subs3.count('8') == 1) and \
+        (subs3.count('9') == 1)
+                
+    ### the fourth 3x3 subsection is made into a new sublist
+    subs4 = []
+    for i in range(3): # column
+        for j in range(3, 6, 1): # row
+            subs4.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean        
+    isTrue4 = (subs4.count('1') == 1) and (subs4.count('2') == 1) and \
+        (subs4.count('3') == 1) and (subs4.count('4') == 1) and \
+        (subs4.count('5') == 1) and (subs4.count('6') == 1) and \
+        (subs4.count('7') == 1) and (subs4.count('8') == 1) and \
+        (subs4.count('9') == 1)
+                
+    ### the fifth 3x3 subsection is made into a new sublist 
+    subs5 = []
+    for i in range(3, 6, 1): # column
+        for j in range(3, 6, 1): # row
+            subs5.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean       
+    isTrue5 = (subs5.count('1') == 1) and (subs5.count('2') == 1) and \
+        (subs5.count('3') == 1) and (subs5.count('4') == 1) and \
+        (subs5.count('5') == 1) and (subs5.count('6') == 1) and \
+        (subs5.count('7') == 1) and (subs5.count('8') == 1) and \
+        (subs5.count('9') == 1)
+                
+    ### the sixth 3x3 subsection is made into a new sublist    
+    subs6 = []
+    for i in range(6, 9, 1): # column
+        for j in range(3, 6, 1): # row
+            subs6.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean         
+    isTrue6 = (subs6.count('1') == 1) and (subs6.count('2') == 1) and \
+        (subs6.count('3') == 1) and (subs6.count('4') == 1) and \
+        (subs6.count('5') == 1) and (subs6.count('6') == 1) and \
+        (subs6.count('7') == 1) and (subs6.count('8') == 1) and \
+        (subs6.count('9') == 1)        
+         
+    ### the seventh 3x3 subsection is made into a new sublist    
+    subs7 = []
+    for i in range(3): # column 
+        for j in range(6, 9, 1): # row
+            subs7.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean        
+    isTrue7 = (subs7.count('1') == 1) and (subs7.count('2') == 1) and \
+        (subs7.count('3') == 1) and (subs7.count('4') == 1) and \
+        (subs7.count('5') == 1) and (subs7.count('6') == 1) and \
+        (subs7.count('7') == 1) and (subs7.count('8') == 1) and \
+        (subs7.count('9') == 1)
+                
+    ### the eighth 3x3 subsection is made into a new sublist   
+    subs8 = []    
+    for i in range(3, 6, 1): # column 
+        for j in range(6, 9, 1): # row
+            subs8.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean        
+    isTrue8 = (subs8.count('1') == 1) and (subs8.count('2') == 1) and \
+        (subs8.count('3') == 1) and (subs8.count('4') == 1) and \
+        (subs8.count('5') == 1) and (subs8.count('6') == 1) and \
+        (subs8.count('7') == 1) and (subs8.count('8') == 1) and \
+        (subs8.count('9') == 1)
+                
+    ### the eighth 3x3 subsection is made into a new sublist     
+    subs9 = []    
+    for i in range(6, 9, 1): # column 
+        for j in range(6, 9, 1): # row
+            subs9.append(lst[i][j])
+    # check if there's no duplicates (.count(x) > 1)   
+    # value is Boolean        
+    isTrue9 = (subs9.count('1') == 1) and (subs9.count('2') == 1) and \
+        (subs9.count('3') == 1) and (subs9.count('4') == 1) and \
+        (subs9.count('5') == 1) and (subs9.count('6') == 1) and \
+        (subs9.count('7') == 1) and (subs9.count('8') == 1) and \
+        (subs9.count('9') == 1)
+    
+    # Value check 
+    # if there is one 'False' , all become False (failed)
+    isTrue = isTrue1 and isTrue2 and isTrue3 and isTrue4 and \
+        isTrue5 and isTrue6 and isTrue7 and isTrue8 and isTrue9
+    
+    return isTrue
+                
+''' Step2: Input every row of Sudoku board with 9 numbers '''  
+first_str = input("Input your first set of number: ")
+second_str = input("Input your second set of number: ")
+third_str = input("Input your third set of number: ")
+fourth_str = input("Input your fourth set of number: ")
+fifth_str = input("Input your fifth set of number: ")
+sixth_str = input("Input your sixth set of number: ")
+seventh_str = input("Input your seventh set of number: ")
+eighth_str = input("Input your eighth set of number: ")
+ninth_str = input("Input your ninth set of number: ")
+
+''' Step3: Convert each string into a list
+for example: '12345' --> ['12345'] '''
+first_lst = []
+second_lst = []
+third_lst = []
+fourth_lst = []
+fifth_lst = []
+sixth_lst = []
+seventh_lst = []
+eighth_lst = []
+ninth_lst = []
+
+''' Step4: Element of each converted list is separated
+for example: ['12345'] --> ['1', '2', '3', '4', '5'] '''
+for char_i in first_str:
+    first_lst.append(char_i)
+    
+for char_i in second_str:
+    second_lst.append(char_i)
+    
+for char_i in third_str:
+    third_lst.append(char_i)
+    
+for char_i in fourth_str:
+    fourth_lst.append(char_i)
+    
+for char_i in fifth_str:
+    fifth_lst.append(char_i)
+
+for char_i in sixth_str:
+    sixth_lst.append(char_i)
+    
+for char_i in seventh_str:
+    seventh_lst.append(char_i)
+    
+for char_i in eighth_str:
+    eighth_lst.append(char_i)
+    
+for char_i in ninth_str:
+    ninth_lst.append(char_i)
+    
+''' Step5: Combine all list into one list (becomes 9x9 array) '''
+lst = [first_lst, second_lst, third_lst, fourth_lst, fifth_lst, sixth_lst, 
+       seventh_lst, eighth_lst, ninth_lst]    
+
+''' Step6: Invoke the function and it will give boolean result '''
+result = CheckNumbers(lst)
+
+''' Print the Sudoku Board (optional) and the boolean Value '''
+print("- "*13)
+print("|", lst[0][0], lst[0][1], lst[0][2], "|", lst[0][3], lst[0][4], lst[0][5], "|", lst[0][6], lst[0][7], lst[0][8], "|")
+print("|", lst[1][0], lst[1][1], lst[1][2], "|", lst[1][3], lst[1][4], lst[1][5], "|", lst[1][6], lst[1][7], lst[1][8], "|")
+print("|", lst[2][0], lst[2][1], lst[2][2], "|", lst[2][3], lst[2][4], lst[2][5], "|", lst[2][6], lst[2][7], lst[2][8], "|")
+print("- "*13)
+print("|", lst[3][0], lst[3][1], lst[3][2], "|", lst[3][3], lst[3][4], lst[3][5], "|", lst[3][6], lst[3][7], lst[3][8], "|")
+print("|", lst[4][0], lst[4][1], lst[4][2], "|", lst[4][3], lst[4][4], lst[4][5], "|", lst[4][6], lst[4][7], lst[4][8], "|")
+print("|", lst[5][0], lst[5][1], lst[5][2], "|", lst[5][3], lst[5][4], lst[5][5], "|", lst[5][6], lst[5][7], lst[5][8], "|")
+print("- "*13)
+print("|", lst[6][0], lst[6][1], lst[6][2], "|", lst[6][3], lst[6][4], lst[6][5], "|", lst[6][6], lst[6][7], lst[6][8], "|")
+print("|", lst[7][0], lst[7][1], lst[7][2], "|", lst[7][3], lst[7][4], lst[7][5], "|", lst[7][6], lst[7][7], lst[7][8], "|")
+print("|", lst[8][0], lst[8][1], lst[8][2], "|", lst[8][3], lst[8][4], lst[8][5], "|", lst[8][6], lst[8][7], lst[8][8], "|")
+print("- "*13)
+
+if result == True:
+    print("----YES----")
+else:
+    print("----NO----")
+    
+    
+            
+
+
+
