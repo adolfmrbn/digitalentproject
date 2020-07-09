@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 26 15:21:19 2020
+
+@author: Lenovo
+"""
+'''Step1'''
+text1 = input("Input a word: ")
+text2 = input("Input a string: ")
+pos = []
+
+'''Step2: find the index'''
+for char in text1:
+    fnd = text2.find(char)
+    pos.append(fnd)
+    
+'''Step3: check if -1 is more than once'''
+if pos.count(-1) > 0:
+    print("No")
+else:
+    print("Yes")
