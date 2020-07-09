@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May 23 15:34:29 2020
+
+@author: Lenovo
+"""
+
+# Make a 2D array for numbers
+def pattern_number():
+    for i in range(len(text)):
+        # Number 0
+        if text[i] == '0':
+            number_0 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if ((row==0 or row==4) and (col<3)) or (col!=1 and (row>0 and row<4)):
+                        number_0[row][col] = '#'
+            list1.append(number_0)
+        
+        # Number 1
+        elif text[i] == '1':
+            number_1 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (col==0 and row<5):
+                        number_1[row][col] = '#'
+            list1.append(number_1)
+        
+        # Number 2
+        elif text[i] == '2':
+            number_2 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (row==0 or row==2 or row==4) or (row==1 and col==2) or (row==3 and col==0):
+                        number_2[row][col] = '#'
+            list1.append(number_2)
+            
+        # Number 3
+        elif text[i] == '3':
+            number_3 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (row==0 or row==2 or row==4) or (row==1 and col==2) or (row==3 and col==2):
+                        number_3[row][col] = '#'
+            list1.append(number_3)
+        
+        # Number 4
+        elif text[i] == '4':
+            number_4 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if col==2 or (row==2) or (row<3 and col==0):
+                        number_4[row][col] = '#'
+            list1.append(number_4)
+        
+        # Number 5
+        elif text[i] == '5':
+            number_5 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (row==0 or row==2 or row==4) or (row==1 and col==0) or (row==3 and col==2):
+                        number_5[row][col] = '#'
+            list1.append(number_5)
+        
+        # Number 6
+        elif text[i] == '6':
+            number_6 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (row==0 or row==2 or row==4) or (row==1 and col==0) or (row==3 and col==0) or (row==3 and col==2):
+                        number_6[row][col] = '#'
+            list1.append(number_6)
+        
+        # Number 7
+        elif text[i] == '7':
+            number_7 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if row==0 or col==2:
+                        number_7[row][col] = '#'
+            list1.append(number_7)
+        
+        # Number 8
+        elif text[i] == '8':
+            number_8 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (row==0 or row==2 or row==4) or (row==1 or row==3) and (col!=1):
+                        number_8[row][col] = '#'
+            list1.append(number_8)
+        
+        # Number 9
+        elif text[i] == '9':
+            number_9 = [[' ' for i in range(3)] for j in range(5)]
+            for row in range(5):
+                for col in range(3):
+                    if (row==0 or row==2 or row==4) or (row==1 and col!=1) or (row==3 and col==2):
+                        number_9[row][col] = '#'
+            list1.append(number_9)
+        
+        else:
+            print("Input must be greater than 0 and less than 10")
+
+    return list1
+
+text = input("Input a number: ")
+list1 = []
+pattern = pattern_number()
+    
+for i in range(5): # index for row
+    for j in range(len(pattern)): #index for 'pattern'
+        for k in range(3):  #index for column
+            print(list1[j][i][k], end=" ")
+        print(end=" ")
+    print()
