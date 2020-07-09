@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun 11 20:56:22 2020
+
+@author: Lenovo
+"""
+
+from os import strerror
+
+try:
+    
+    file1 = open('test_6.txt', 'rt')
+    file2 = open('test_6.hist.txt', 'wt')
+    line = file1.readline()
+    dict_ = {}
+    empty_str = ''
+    while line != '':
+        lcnt += 1
+        list_line = list(line)
+        empty_str = ''
+        for ch in list_line:
+            ch = ch.lower()
+            empty_str += ch
+            for i in empty_str:
+                dict_.update({i: empty_str.count(i)})
+        
+        line = file1.readline()
+        
+    sorted_dict = dict(sorted(dict_.items(), key=lambda dict_: dict_[1], reverse=True))
+    
+    for k, v in sorted_dict.items():
+        file2.write(str(k) + '->'+ str(v) + '\n')
+    file2.close()
+    file1.close()
+    
+except IOError as e:
+    print("I/O error occurred:", strerr(e.errno))
