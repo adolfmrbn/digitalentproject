@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun 11 19:36:13 2020
+
+@author: Lenovo
+"""
+
+from os import strerror
+
+try:
+    
+    file = open('test_6.txt', 'rt')
+    line = file.readline()
+    dict_ = {}
+    while line != '':
+        lcnt += 1
+        list_line = list(line)
+        empty_str = ''
+        for ch in list_line:
+            ch = ch.lower()
+            empty_str += ch
+            for i in empty_str:
+                dict_.update({i: empty_str.count(i)})
+        
+        line = file.readline()
+        for i in dict_:
+            print(i, "->", dict_[i])
+
+    file.close()
+    
+except IOError as e:
+    print("I/O error occurred:", strerr(e.errno))
